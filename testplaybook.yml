@@ -1,0 +1,11 @@
+---
+- name: testpassword
+  hosts: localhost
+
+  tasks:
+  - name: test encrypt
+    ansible.builtin.debug:
+      msg: "{{'password' | ign_encrypt}}"
+  - name: test decrypt
+    ansible.builtin.debug:
+      msg: "{{'1dec500a51e36debd310d5418db630fa' | ign_decrypt}}"
